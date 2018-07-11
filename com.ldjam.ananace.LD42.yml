@@ -1,0 +1,31 @@
+---
+app-id: com.ldjam.ananace.LD42
+branch: stable
+runtime: org.gnome.Platform
+runtime-version: "3.28"
+sdk: org.gnome.Sdk
+
+command: LD42
+finish-args:
+  - --share=ipc
+  - --socket=x11
+  - --device=dri
+
+cleanup:
+  - /include
+  - /lib/pkgconfig
+  - /lib/*.la
+  - /lib/*.a
+  - /share/aclocal
+  - Makefile
+
+modules:
+  - dist/shared-modules/udev/udev-175.json
+  - dist/sfml-2.4.2.json
+
+  - name: LD42
+    buildsystem: cmake-ninja
+    sources:
+      - type: git
+        url: https://github.com/ananace/LD42.git
+        tag: master
