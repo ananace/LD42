@@ -39,7 +39,7 @@ find_package_handle_standard_args(Angelscript
 mark_as_advanced(Angelscript_FOUND Angelscript_INCLUDE_DIR Angelscript_LIBRARIES Angelscript_LIBRARY_DEBUG Angelscript_LIBRARY_RELEASE)
 
 if(Angelscript_FOUND AND NOT TARGET Angelscript::Angelscript)
-  add_library(Angelscript::Angelscript IMPORTED)
+  add_library(Angelscript::Angelscript IMPORTED MODULE)
   set_target_properties(Angelscript::Angelscript PROPERTIES
     INTERFACE_INCLUDE_DIRECTORIES "${Angelscript_INCLUDE_DIR}"
   )

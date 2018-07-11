@@ -2,7 +2,9 @@
 # External dependencies
 # 
 
-find_package(SFML 2.5 REQUIRED COMPONENTS graphics window system)
+find_package(Angelscript REQUIRED)
+find_package(FontConfig REQUIRED)
+find_package(SFML 2.4 REQUIRED COMPONENTS graphics window system)
 
 
 # 
@@ -27,7 +29,6 @@ set(headers
     InputManager.hpp
     Math.hpp
     Math.inl
-    Profiler.hpp
     ScriptEngine.hpp
     ScriptEngine.cpp
     Version.hpp

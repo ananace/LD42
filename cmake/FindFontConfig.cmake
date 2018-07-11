@@ -12,9 +12,9 @@
 #     FontConfig::FontConfig
 
 find_package(PkgConfig)
-pkg_check_modules(PC_FontConfig QUIET FontConfig)
+pkg_check_modules(PC_FontConfig QUIET fontconfig)
 
-find_path(FONTCONFIG_INCLUDE_DIR
+find_path(FontConfig_INCLUDE_DIR
   NAMES fontconfig.h
   PATHS
   ${PC_FontConfig_INCLUDEDIR}
@@ -24,7 +24,7 @@ find_path(FONTCONFIG_INCLUDE_DIR
   /usr/include
   PATH_SUFFIXES fontconfig
 )
-find_library(FONTCONFIG_LIBRARY
+find_library(FontConfig_LIBRARY
   NAMES fontconfig
   PATHS
   ${PC_FontConfig_LIBDIR}
@@ -47,7 +47,7 @@ if(FontConfig_FOUND)
 endif()
 
 if(FontConfig_FOUND AND NOT TARGET FontConfig::FontConfig)
-  add_library(FontConfig::FontConfig IMPORTED)
+  add_library(FontConfig::FontConfig IMPORTED MODULE)
   set_target_properties(FontConfig::FontConfig PROPERTIES
     INTERFACE_INCLUDE_DIRECTORIES "${FontConfig_INCLUDE_DIR}"
   )
