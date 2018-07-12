@@ -4,7 +4,7 @@ image: ubuntu:18.04
 build:
   before_script:
     - apt-get update -y -q
-    - apt-get install -y --no-install-recommends ca-certificates wget unzip make g++ libsfml-dev
+    - apt-get install -y -q --no-install-recommends ca-certificates wget unzip cmake make g++ libsfml-dev
   script:
     - wget https://angelcode.com/angelscript/sdk/files/angelscript_2.32.0.zip
     - unzip angelscript_2.32.0.zip
