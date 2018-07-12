@@ -30,13 +30,14 @@ set(headers
     Math.hpp
     Math.inl
     ScriptEngine.hpp
-    ScriptEngine.cpp
+    Util.hpp
     Version.hpp
 )
 
 set(sources
     InputManager.cpp
     ScriptEngine.cpp
+    Util.cpp
     ${META_PROJECT_NAME}-Version.cpp
 )
 
