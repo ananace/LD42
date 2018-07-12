@@ -8,7 +8,8 @@ build:
   script:
     - wget https://angelcode.com/angelscript/sdk/files/angelscript_2.32.0.zip
     - unzip angelscript_2.32.0.zip
-    - make -j$(nproc --ignore=1) -C sdk/angelscript/projects/gnuc install
+    - make -j$(nproc --ignore=1) -C sdk/angelscript/projects/gnuc
+    - make -C sdk/angelscript/projects/gnuc install
     - mkdir build
     - cd build
     - cmake ..
