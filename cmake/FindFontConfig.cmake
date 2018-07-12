@@ -50,8 +50,6 @@ if(FontConfig_FOUND AND NOT TARGET FontConfig::FontConfig)
   add_library(FontConfig::FontConfig IMPORTED MODULE)
   set_target_properties(FontConfig::FontConfig PROPERTIES
     INTERFACE_INCLUDE_DIRECTORIES "${FontConfig_INCLUDE_DIR}"
-  )
-  target_link_libraries(FontConfig::FontConfig
-    INTERFACE ${FontConfig_LIBRARIES}
+    INTERFACE_LINK_LIBRARIES "${FontConfig_LIBRARIES}"
   )
 endif()

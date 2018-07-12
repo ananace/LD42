@@ -42,8 +42,6 @@ if(Angelscript_FOUND AND NOT TARGET Angelscript::Angelscript)
   add_library(Angelscript::Angelscript IMPORTED MODULE)
   set_target_properties(Angelscript::Angelscript PROPERTIES
     INTERFACE_INCLUDE_DIRECTORIES "${Angelscript_INCLUDE_DIR}"
-  )
-  target_link_libraries(Angelscript::Angelscript
-    INTERFACE ${Angelscript_LIBRARIES}
+    INTERFACE_LINK_LIBRARIES "${Angelscript_LIBRARIES}"
   )
 endif()
