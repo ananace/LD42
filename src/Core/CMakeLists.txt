@@ -29,14 +29,14 @@ set(headers
     InputManager.hpp
     Math.hpp
     Math.inl
-    ScriptEngine.hpp
+#   ScriptEngine.hpp
     Util.hpp
     Version.hpp
 )
 
 set(sources
     InputManager.cpp
-    ScriptEngine.cpp
+#   ScriptEngine.cpp
     Util.cpp
     ${META_PROJECT_NAME}-Version.cpp
 )
@@ -87,6 +87,7 @@ target_include_directories(${target}
     ${PROJECT_BINARY_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_BINARY_DIR}
+    FontConfig::FontConfig
 
     PUBLIC
     ${DEFAULT_INCLUDE_DIRECTORIES}
@@ -104,6 +105,7 @@ target_include_directories(${target}
 
 target_link_libraries(${target}
     PRIVATE
+    FontConfig::FontConfig
 
     PUBLIC
     ${DEFAULT_LIBRARIES}
