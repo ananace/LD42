@@ -54,7 +54,6 @@ source_group_by_path(${CMAKE_CURRENT_SOURCE_DIR}  "\\\\.cpp$|\\\\.c$|\\\\.h$|\\\
 
 # Build library
 add_library(${target}
-    SHARED
     ${sources}
     ${headers}
 )
