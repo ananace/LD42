@@ -6,6 +6,14 @@
 
 
 # 
+# Library name and options
+# 
+
+# Exit here if required dependencies are not met
+message(STATUS "App ${META_PROJECT_NAME}")
+
+
+# 
 # Sources
 # 
 

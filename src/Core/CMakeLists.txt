@@ -54,6 +54,7 @@ source_group_by_path(${CMAKE_CURRENT_SOURCE_DIR}  "\\\\.cpp$|\\\\.c$|\\\\.h$|\\\
 
 # Build library
 add_library(${target}
+    SHARED
     ${sources}
     ${headers}
 )
@@ -84,7 +85,7 @@ target_include_directories(${target}
     ${PROJECT_BINARY_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${CMAKE_CURRENT_BINARY_DIR}
-    FontConfig::FontConfig
+    ${FontConfig_INCLUDE_DIRS}
 
     PUBLIC
     ${DEFAULT_INCLUDE_DIRECTORIES}
@@ -102,7 +103,7 @@ target_include_directories(${target}
 
 target_link_libraries(${target}
     PRIVATE
-    FontConfig::FontConfig
+    ${FontConfig_LIBRARIES}
 
     PUBLIC
     ${DEFAULT_LIBRARIES}
