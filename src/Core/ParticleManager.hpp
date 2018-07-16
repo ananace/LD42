@@ -16,7 +16,7 @@ class ParticleManager
 public:
     struct Particle
     {
-        float StartLifetime, Lifetime, Friction, RotationVelocity;
+        float Lifetime, Friction, RotationVelocity;
         sf::Color StartColor, EndColor;
         sf::Transform Transform;
         sf::Vector2f Velocity;
@@ -45,6 +45,8 @@ private:
                  m_curParticle;
 
     sf::Texture m_texture;
+
+    std::vector<float> m_lifetimes;
     std::vector<Particle> m_particles;
 };
 

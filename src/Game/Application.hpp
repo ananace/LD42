@@ -16,6 +16,11 @@ public:
     void init(int argc, char** argv);
     void run();
 
+    Core::InputManager& GetInputManager();
+    const Core::InputManager& GetInputManager() const;
+    Core::ParticleManager& GetParticleManager();
+    const Core::ParticleManager& GetParticleManager() const;
+
 private:
     enum
     {

@@ -1,5 +1,6 @@
 #include "Application.hpp"
 #include "Inputs.hpp"
+#include "Particles.hpp"
 
 #include <Math.hpp>
 
@@ -45,6 +46,23 @@ void Application::run()
     }
 }
 
+
+Core::InputManager& Application::GetInputManager()
+{
+    return m_inputMan;
+}
+const Core::InputManager& Application::GetInputManager() const
+{
+    return m_inputMan;
+}
+Core::ParticleManager& Application::GetParticleManager()
+{
+    return m_particleMan;
+}
+const Core::ParticleManager& Application::GetParticleManager() const
+{
+    return m_particleMan;
+}
 
 Application& Application::GetApplication()
 {
