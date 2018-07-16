@@ -28,6 +28,7 @@ set(headers
     InputManager.hpp
     Math.hpp
     Math.inl
+    ParticleManager.hpp
     Util.hpp
     Version.hpp
 )
@@ -35,6 +36,7 @@ set(headers
 set(sources
     InputManager.cpp
     Math.cpp
+    ParticleManager.cpp
     Util.cpp
     ${META_PROJECT_NAME}-Version.cpp
 )

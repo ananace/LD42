@@ -1,8 +1,10 @@
 #pragma once
 
-#include <cmath>
-
 #include <SFML/System/Vector2.hpp>
+
+#include <type_traits>
+
+#include <cmath>
 
 namespace Core
 {
@@ -29,6 +31,11 @@ namespace Math
 
     template<typename T>
     T AngularLerp(T start, T end, T delta);
+
+    template<typename T, typename = std::enable_if_t<std::is_arithmetic<T>::value>>
+    T Lerp(T start, T end, float delta);
+    template<typename T, typename = std::enable_if_t<!std::is_arithmetic<T>::value>>
+    T Lerp(const T& start, const T& end, float delta);
 
     template<typename T>
     sf::Vector2<T> Normalized(const sf::Vector2<T>& vec);

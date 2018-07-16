@@ -43,6 +43,13 @@ T Math::AngularLerp(T start, T end, T delta)
 }
 
 template<typename T>
+T Lerp(T start, T end, float delta)
+{
+    return start + (end - start) * delta;
+}
+
+
+template<typename T>
 sf::Vector2<T> Math::Normalized(const sf::Vector2<T>& vec)
 {
     T len = Length(vec);

@@ -1,5 +1,36 @@
 #include "Math.hpp"
 
+#include <SFML/Graphics/Color.hpp>
+
+namespace Core
+{
+
+namespace Math
+{
+
+template<>
+sf::Vector2f Lerp<sf::Vector2f>(const sf::Vector2f& start, const sf::Vector2f& end, float delta)
+{
+    return start + (end - start) * delta;
+}
+
+template<>
+sf::Color Lerp<sf::Color>(const sf::Color& start, const sf::Color& end, float delta)
+{
+    sf::Color ret;
+
+    ret.r = start.r + (end.r - start.r) * delta;
+    ret.g = start.g + (end.g - start.g) * delta;
+    ret.b = start.b + (end.b - start.b) * delta;
+    ret.a = start.a + (end.a - start.a) * delta;
+
+    return ret;
+}
+
+}
+
+}
+
 using Core::Math::Spinor;
 
 template<typename T>
