@@ -11,7 +11,7 @@
 namespace Core
 {
 
-class ParticleManager
+class ParticleManager : public sf::Drawable
 {
 public:
     struct Particle

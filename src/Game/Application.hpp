@@ -18,8 +18,8 @@ public:
 
     Core::InputManager& GetInputManager();
     const Core::InputManager& GetInputManager() const;
-    Core::ParticleManager& GetParticleManager();
-    const Core::ParticleManager& GetParticleManager() const;
+    Core::ParticleManager& GetParticleManager(bool overlay = false);
+    const Core::ParticleManager& GetParticleManager(bool overlay = false) const;
 
 private:
     enum
@@ -28,7 +28,7 @@ private:
     };
 
     Core::InputManager m_inputMan;
-    Core::ParticleManager m_particleMan;
+    Core::ParticleManager m_particleMan[2];
 
     sf::RenderWindow m_renderWindow;
 };
