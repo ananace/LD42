@@ -34,6 +34,7 @@ set(headers
 
 set(sources
     InputManager.cpp
+    Math.cpp
     Util.cpp
     ${META_PROJECT_NAME}-Version.cpp
 )

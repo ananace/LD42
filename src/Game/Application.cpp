@@ -1,5 +1,7 @@
 #include "Application.hpp"
 
+#include <Math.hpp>
+
 Application* g_application;
 
 Application::Application()
