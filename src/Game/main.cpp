@@ -8,6 +8,7 @@
 int main(int argc, char** argv)
 {
     Application app;
+    app.init(argc, argv);
 
     double d_pi = Core::Math::Pi<double>();
     float f_pi = Core::Math::Pi<float>();

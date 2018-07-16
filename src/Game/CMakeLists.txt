@@ -19,6 +19,7 @@ message(STATUS "App ${META_PROJECT_NAME}")
 
 set(headers
     Application.hpp
+    Inputs.hpp
 )
 
 set(sources
