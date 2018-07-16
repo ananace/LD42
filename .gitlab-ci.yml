@@ -1,7 +1,7 @@
 ---
 image: ubuntu:18.04
 
-build:
+plain_build:
   before_script:
     - apt-get update -y -q
     - apt-get install -y -q --no-install-recommends cmake make g++ libfontconfig1-dev libsfml-dev
@@ -10,3 +10,17 @@ build:
     - cd build
     - cmake ..
     - make -j$(nproc --ignore=1)
+  except:
+    variables:
+      - $CI_REGISTRY
+
+image_build:
+  image: $CI_REGISTRY_IMAGE
+  script:
+    - mkdir build
+    - cd build
+    - cmake ..
+    - make -j$(nproc --ignore=1)
+  only:
+    variables:
+      - $CI_REGISTRY
