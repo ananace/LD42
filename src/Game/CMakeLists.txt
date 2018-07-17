@@ -20,10 +20,13 @@ message(STATUS "App ${META_PROJECT_NAME}")
 set(headers
     Application.hpp
     Inputs.hpp
+    Particles.hpp
+    Util.hpp
 )
 
 set(sources
     Application.cpp
+    Util.cpp
 
     main.cpp
 )
