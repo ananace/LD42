@@ -21,11 +21,13 @@ set(headers
     Application.hpp
     Inputs.hpp
     Particles.hpp
+    StateManager.hpp
     Util.hpp
 )
 
 set(sources
     Application.cpp
+    StateManager.cpp
     Util.cpp
 
     main.cpp
