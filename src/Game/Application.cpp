@@ -55,9 +55,11 @@ void Application::run()
 
         m_particleMan[0].update(dtSeconds);
         m_particleMan[1].update(dtSeconds);
+        m_stateMan.update(dtSeconds);
 
         m_renderWindow.clear();
 
+        m_stateMan.draw(m_renderWindow);
 
         m_renderWindow.draw(m_particleMan[1]);
         m_renderWindow.display();
@@ -85,6 +87,15 @@ const Core::ParticleManager& Application::GetParticleManager(bool overlay) const
         return m_particleMan[1];
     return m_particleMan[0];
 }
+StateManager& Application::GetStateManager()
+{
+    return m_stateMan;
+}
+const StateManager& Application::GetStateManager() const
+{
+    return m_stateMan;
+}
+
 
 Application& Application::GetApplication()
 {

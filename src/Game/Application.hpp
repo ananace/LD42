@@ -2,6 +2,7 @@
 
 #include <InputManager.hpp>
 #include <ParticleManager.hpp>
+#include "StateManager.hpp"
 
 #include <SFML/Graphics/RenderWindow.hpp>
 
@@ -20,6 +21,8 @@ public:
     const Core::InputManager& GetInputManager() const;
     Core::ParticleManager& GetParticleManager(bool overlay = false);
     const Core::ParticleManager& GetParticleManager(bool overlay = false) const;
+    StateManager& GetStateManager();
+    const StateManager& GetStateManager() const;
 
 private:
     enum
@@ -29,6 +32,7 @@ private:
 
     Core::InputManager m_inputMan;
     Core::ParticleManager m_particleMan[2];
+    StateManager m_stateMan;
 
     sf::RenderWindow m_renderWindow;
 };
